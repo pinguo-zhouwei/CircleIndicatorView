@@ -19,6 +19,26 @@
 
 **5 ,支持点击Indicator 来切换View Pager**
 
+### Dependency
+
+** 1, 最外层build.gradle添加如下代码：**
+```java
+   allprojects {
+       repositories {
+	...
+	maven { url 'https://jitpack.io' }
+   }
+}
+```
+
+**2, app 层buid.gradle dependencies 中 添加如下代码：**
+
+```java
+compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.0'
+	
+```
+
+
 ### 自定义属性
 
 | 属性名      | 属性意义   |  取值  |
