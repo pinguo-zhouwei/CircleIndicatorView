@@ -2,6 +2,10 @@
 
 一个轻量级的配合ViewPager 使用的IndicatorView(指示器)。
 
+效果图如下：
+
+![IndicatorView](indicatorView.gif)
+
 ### 特性
 它有一下特性：
 
