@@ -21,7 +21,7 @@
 
 ### Dependency
 
-** 1, 最外层build.gradle添加如下代码：**
+**1, 最外层build.gradle添加如下代码：**
 ```java
    allprojects {
        repositories {
