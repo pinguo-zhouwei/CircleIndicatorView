@@ -38,6 +38,10 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
     private FillMode mFillMode = FillMode.NONE;// 默认只有小圆点
     private ViewPager mViewPager;
     private OnIndicatorClickListener mOnIndicatorClickListener;
+    /**
+     * 是否允许点击Indicator切换ViewPager
+     */
+    private boolean mIsEnableClickSwitch = false;
     public CircleIndicatorView(Context context) {
         super(context);
         init();
@@ -102,6 +106,7 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
         mSelectColor = typedArray.getColor(R.styleable.CircleIndicatorView_indicatorSelectColor,Color.WHITE);
         mDotNormalColor = typedArray.getColor(R.styleable.CircleIndicatorView_indicatorColor,Color.GRAY);
 
+        mIsEnableClickSwitch = typedArray.getBoolean(R.styleable.CircleIndicatorView_enableIndicatorSwitch,false);
         int fillMode = typedArray.getInt(R.styleable.CircleIndicatorView_fill_mode,2);
         if(fillMode == 0){
             mFillMode = FillMode.LETTER;
@@ -218,7 +223,11 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
                     && yDis >= (yDis - (indicator.cy+mStrokeWidth))
                     && yDis <(indicator.cy+mRadius+mStrokeWidth)){
                  // 找到了点击的Indicator
-                 mViewPager.setCurrentItem(i,false);
+                 // 是否允许切换ViewPager
+                 if(mIsEnableClickSwitch){
+                     mViewPager.setCurrentItem(i,false);
+                 }
+
                  // 回调
                 if(mOnIndicatorClickListener!=null){
                     mOnIndicatorClickListener.onSelected(i);
@@ -301,6 +310,9 @@ public class CircleIndicatorView extends View implements ViewPager.OnPageChangeL
         mSpace = space;
     }
 
+    public void setEnableClickSwitch(boolean enableClickSwitch){
+        mIsEnableClickSwitch = enableClickSwitch;
+    }
     /**
      *  与ViewPager 关联
      * @param viewPager
