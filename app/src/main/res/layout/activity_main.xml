@@ -42,6 +42,7 @@
          android:layout_marginBottom="30dp"
          app:indicatorColor="#273142"
          app:fill_mode="number"
+         app:enableIndicatorSwitch="true"
          app:indicatorTextColor="@android:color/white"
          app:indicatorSelectColor="#C79EFE"
          app:indicatorRadius="10dp"

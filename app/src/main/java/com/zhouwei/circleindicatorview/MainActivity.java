@@ -54,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
         indicatorView.setSpace(DisplayUtils.dpToPx(10));
         // 设置模式
         indicatorView.setFillMode(CircleIndicatorView.FillMode.LETTER);
+        // 设置点击Indicator可以切换ViewPager
+        indicatorView.setEnableClickSwitch(true);
 
         // 最重要的一步：关联ViewPager
         indicatorView.setUpWithViewPager(mViewPager);

@@ -35,7 +35,7 @@
 **2, app 层buid.gradle dependencies 中 添加如下代码：**
 
 ```java
-compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.0'
+compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.1'
 	
 ```
 
@@ -51,6 +51,7 @@ compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.0'
 | indicatorColor        | 设置指示器圆点的颜色      |   颜色值    |
 | indicatorSelectColor        | 设置指示器选中的颜色      |   颜色值    |
 | fill_mode        |   设置指示器的模式    |   枚举值：有三种，分别是letter,number和none|
+| enableIndicatorSwitch        | 设置是否点击Indicator切换ViewPager,默认为false      |   布尔值    |
 
 ### 使用方法
 
@@ -108,6 +109,9 @@ compile 'com.github.pinguo-zhouwei:CircleIndicatorView:v1.0.0'
           indicatorView.setSpace(DisplayUtils.dpToPx(10));
           // 设置模式
           indicatorView.setFillMode(CircleIndicatorView.FillMode.LETTER);
+          
+          // 设置点击Indicator可以切换ViewPager
+          indicatorView.setEnableClickSwitch(true);
   
           // 最重要的一步：关联ViewPager
           indicatorView.setUpWithViewPager(mViewPager);
